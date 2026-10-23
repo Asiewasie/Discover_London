@@ -100,13 +100,20 @@ a.card:hover h3{color:var(--accent-dark);text-decoration:underline}
 
 /* Paddington's tips */
 .tip{display:flex;align-items:flex-end;gap:16px;margin:0 0 36px;max-width:760px}
-.tip-img{position:relative;flex:0 0 96px;width:96px;height:96px;border-radius:50%;background:#fff3d6;color:#c1272d;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:38px;overflow:hidden;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.tip-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff3d6}
 .bubble{position:relative;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:12px 18px}
 .bubble::before{content:"";position:absolute;left:-12px;bottom:22px;width:20px;height:20px;background:#fff;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
 .bubble strong{display:block;font-size:14px;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.5px}
 .bubble p{margin:2px 0 0}
 
 @media(max-width:800px){
-  .tip-img{flex-basis:72px;width:72px;height:72px;font-size:28px}
+  }
+
+/* Paddington picture: shown whole, at its natural proportions */
+.tip-img{flex:0 0 auto;display:flex;align-items:flex-end}
+.tip-img img{display:block;height:130px;width:auto;max-width:180px;object-fit:contain}
+.tip-img span{display:none}
+.tip-img.noimg span{display:flex;width:96px;height:96px;border-radius:50%;background:#fff3d6;color:#c1272d;align-items:center;justify-content:center;font-weight:900;font-size:38px;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+@media(max-width:800px){
+  .tip-img img{height:96px;max-width:130px}
+  .tip-img.noimg span{width:72px;height:72px;font-size:28px}
 }
